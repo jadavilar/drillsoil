@@ -21,6 +21,9 @@
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
+    /* Bloqueo de scroll lateral */
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
@@ -90,11 +93,6 @@ h2 {
     transition: 0.3s;
 }
 
-.navbar-spacer {
-    height: 70px; 
-    background-color: var(--primary-blue);
-}
-
 /* =========================================
    BANNER PRINCIPAL (HERO)
    ========================================= */
@@ -126,27 +124,27 @@ h2 {
 }
 
 .hero-logo {
-    max-width: 500px;
-    margin-bottom: 0px;
+    max-width: 450px; /* Tamaño ajustado para visibilidad */
+    margin-bottom: 5px; /* Pegado al lema */
 }
 
 .hero p {
     font-size: 1.2rem;
     font-style: italic;
-    margin-top: 10px;
+    margin-top: 0;
     padding: 0 20px;
 }
 
 .scroll-down {
     position: absolute; 
-    bottom: 40px;       
+    bottom: 40px;        
     left: 0;
     right: 0;
     margin: 0 auto;
     color: var(--text-light);
     font-size: 2rem;
     animation: bounce 2s infinite;
-    z-index: 2; /* <--- Agrega esta línea para que se pueda hacer clic */
+    z-index: 2;
 }
 
 @keyframes bounce {
@@ -156,7 +154,7 @@ h2 {
 }
 
 /* =========================================
-   SECCIÓN: NOSOTROS (DISEÑO SIMÉTRICO)
+   SECCIÓN: NOSOTROS
    ========================================= */
 section {
     padding: 80px 0;
@@ -166,77 +164,27 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: stretch; /* Obliga a que las dos columnas tengan la misma altura */
-}
-
-.about-col {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Columna Izquierda (Textos) */
-.about-text {
-    flex-grow: 1; /* Rellena el espacio para empujar la foto del fundador abajo */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: 1.05rem;
-}
-
-/* Columna Derecha (Estadísticas) */
-.about-stats {
-    flex-grow: 1; /* Rellena el espacio para centrarse con el texto */
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centra las tarjetas verticalmente con el texto izquierdo */
-    gap: 20px;
+    align-items: stretch;
 }
 
 .stat-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Fuerza el centrado vertical interno */
-    align-items: center;     /* Fuerza el centrado horizontal interno */
-    text-align: center;
     background: var(--primary-dark); 
     color: var(--text-light);
     padding: 30px 15px;
     border-radius: 8px;
-    flex: 1; /* Ambas tarjetas ocupan el mismo ancho */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-}
-
-.stat-box h3 {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 5px;
-}
-
-.stat-box p {
-    margin: 0;
-    font-weight: 500;
-}
-
-/* Elementos inferiores alineados (Fundador y Botón) */
-.founder-profile, .brochure-container {
-    height: 110px; /* Altura fija para alinear perfectamente */
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
+    text-align: center;
+    flex: 1;
 }
 
 .founder-profile {
+    display: flex;
+    align-items: center;
     background: #fff;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     border-left: 4px solid var(--primary-blue);
     gap: 15px;
+    margin-top: 20px;
 }
 
 .founder-img {
@@ -245,59 +193,11 @@ section {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary-blue);
-    flex-shrink: 0;
-}
-
-.founder-info h4 {
-    color: var(--primary-blue);
-    margin-bottom: 3px;
-    font-size: 1.1rem;
-}
-
-.founder-info span {
-    color: #666;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.brochure-container {
-    justify-content: center;
-}
-
-.btn-brochure {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--accent-color);
-    color: var(--text-light);
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 350px;
-}
-
-.btn-brochure:hover {
-    background-color: #b54600;
-    transform: translateY(-3px);
-}
-
-.btn-brochure i {
-    margin-right: 10px;
-    font-size: 1.2rem;
 }
 
 /* =========================================
-   SERVICIOS
+   SERVICIOS Y SLIDER
    ========================================= */
-.services-section {
-    background-color: #fff;
-}
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -309,108 +209,34 @@ section {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column; 
-    height: 100%; 
+    transition: transform 0.3s;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
+.service-card:hover { transform: translateY(-10px); }
 
-.service-img {
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    flex-shrink: 0; 
-}
-
-.service-info {
-    padding: 20px;
-    text-align: center;
-    background-color: var(--primary-blue);
-    color: var(--text-light);
-    flex-grow: 1; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-info h3 {
-    font-size: 1.2rem;
-    line-height: 1.3;
-}
-
-/* =========================================
-   SLIDER DE PROYECTOS
-   ========================================= */
 .slider-container {
     position: relative;
     max-width: 800px;
     margin: auto;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+.slider { display: flex; transition: transform 0.5s; }
 
-.slide {
-    min-width: 100%;
-    position: relative;
-}
+.slide { min-width: 100%; }
 
-.slide img {
-    width: 100%;
-    display: block;
-}
-
-.slide-caption {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(44, 45, 35, 0.85); 
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(10, 74, 122, 0.7); 
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: background 0.3s;
-}
-
-.prev-btn { left: 0; }
-.next-btn { right: 0; }
-.prev-btn:hover, .next-btn:hover { background: var(--accent-color); }
+.slide img { width: 100%; display: block; }
 
 /* =========================================
    VIDEO
    ========================================= */
-.video-section {
-    background-color: var(--bg-light);
-}
-
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; 
     height: 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .video-wrapper iframe {
@@ -419,75 +245,6 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 8px;
-}
-
-/* =========================================
-   PÁGINA DE CONTACTO Y FORMULARIO
-   ========================================= */
-.contact-page-section {
-    padding: 60px 0 100px;
-    background-color: var(--bg-light);
-    min-height: calc(100vh - 70px - 200px); 
-}
-
-.contact-subtitle {
-    text-align: center;
-    margin-top: -20px;
-    margin-bottom: 40px;
-    color: var(--primary-blue);
-    font-size: 1.1rem;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-top: 5px solid var(--primary-blue);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--primary-blue);
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-blue);
-}
-
-.btn-submit {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.3s;
-}
-
-.btn-submit:hover {
-    background-color: #b54600;
 }
 
 /* =========================================
@@ -504,14 +261,6 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.footer-logo {
-    max-width: 250px;
-    height: auto;
-    margin-bottom: 15px;
-    display: block;
 }
 
 .footer-info p {
@@ -524,36 +273,19 @@ footer {
 .footer-info i {
     color: var(--accent-color);
     margin-right: 12px;
-    width: 20px; 
-    text-align: center;
-    flex-shrink: 0;
 }
 
 .footer-social a {
     color: var(--text-light);
     font-size: 2.5rem; 
     margin: 0 15px;
-    transition: color 0.3s, transform 0.3s;
-    display: inline-block;
+    transition: 0.3s;
 }
 
-.footer-social a:hover {
-    color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    border-top: 1px solid #444537;
-    padding-top: 20px;
-    text-align: center; 
-    width: 100%; 
-    display: block;
-    font-size: 1rem;
-    color: #aaaaaa;
-}
+.footer-social a:hover { color: var(--accent-color); }
 
 /* =========================================
-   BOTÓN FLOTANTE WHATSAPP
+   WHATSAPP Y RESPONSIVE
    ========================================= */
 .whatsapp-float {
     position: fixed;
@@ -562,55 +294,19 @@ footer {
     bottom: 40px;
     right: 40px;
     background-color: #25d366;
-    color: #FFF;
     border-radius: 50px;
-    text-align: center;
-    font-size: 35px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    z-index: 100;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    z-index: 100;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-/* =========================================
-   DISEÑO RESPONSIVE (MÓVILES)
-   ========================================= */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
+    .navbar { padding: 15px 20px; }
     
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* En móvil, el botón y el fundador se alinean al centro */
-    .founder-profile {
-        justify-content: center;
-        text-align: left;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    
-    .footer-logo {
-        margin: 0 auto 15px auto;
-    }
-    
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-    }
+    .about-grid { grid-template-columns: 1fr; }
 
     .nav-links {
         position: fixed;
@@ -620,37 +316,30 @@ footer {
         background-color: var(--primary-blue);
         width: 100%;
         text-align: center;
-        transition: 0.3s ease-in-out;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        transition: 0.3s;
     }
 
-    .nav-links.active {
-        right: 0;
+    .nav-links.active { right: 0; }
+
+    .menu-toggle { display: flex; }
+
+    /* CORRECCIÓN DE DESPLAZAMIENTO Y FOOTER EN MÓVIL */
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .nav-links li {
-        margin: 25px 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-}
-/* --- Arreglo para que el texto no se salga de la pantalla --- */
     footer .footer-info p {
-        word-wrap: break-word;      /* Rompe los números largos si no caben */
-        overflow-wrap: break-word;  
-        white-space: normal;        /* Permite saltos de línea */
-        max-width: 100%;            /* No deja que el texto empuje la pantalla */
-        padding: 0 15px;            /* Un pequeño margen a los lados */
+        display: block; /* Separa icono de texto */
+        width: 100%;
+        white-space: normal;
+        word-break: break-word; /* Evita que los números largos empujen la pantalla */
+        padding: 0 10px;
+        margin-bottom: 15px;
     }
 
-    /* Evita el espacio en blanco a la derecha y el movimiento lateral */
-    body, html {
+    html, body {
+        max-width: 100%;
         overflow-x: hidden;
-        width: 100%;
     }
+}
