@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto - Cotiza los servicios de Drillsoil S.A.">
+    <title>Contacto | Drillsoil S.A.</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo-menu.png" alt="Drillsoil Logo">
+            </a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#galeria">Proyectos</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="navbar-spacer"></div>
+
+    <section class="contact-page-section">
+        <div class="container">
+            <h2>Cotiza con Nosotros</h2>
+            <p class="contact-subtitle">Déjanos tus datos y un asesor especializado se comunicará contigo lo más pronto posible.</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/xwvwgeaw" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico *</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje (Opcional)</label>
+                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <img src="images/logo-footer.png" alt="Drillsoil Logo" class="footer-logo">
+                <p><i class="fa-solid fa-location-dot"></i> Av. Amazonas N39-123 y José Arízaga. Edificio Amazonas Plaza. Piso 10</p>
+                <p><i class="fa-solid fa-phone"></i> 0999499502 | 0992788288 | 0969882469 | +593 2 2273128 | +593 2 2273129</p>
+                <p><i class="fa-solid fa-envelope"></i> amontano@drillsoil.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Drillsoil S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/593999499502?text=Hola,%20estoy%20interesado%20en%20cotizar%20los%20Servicios%20de%20Drillsoil%20-%20Ingenier%C3%ADa%20de%20Suelos" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
