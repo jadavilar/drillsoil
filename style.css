@@ -640,3 +640,17 @@ footer {
     .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
+/* --- Arreglo para que el texto no se salga de la pantalla --- */
+    footer .footer-info p {
+        word-wrap: break-word;      /* Rompe los números largos si no caben */
+        overflow-wrap: break-word;  
+        white-space: normal;        /* Permite saltos de línea */
+        max-width: 100%;            /* No deja que el texto empuje la pantalla */
+        padding: 0 15px;            /* Un pequeño margen a los lados */
+    }
+
+    /* Evita el espacio en blanco a la derecha y el movimiento lateral */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
