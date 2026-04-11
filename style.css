@@ -579,3 +579,32 @@ footer {
     .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
+/* Alineación de teléfonos en 2 columnas de texto */
+.footer-phones {
+    display: flex;
+    align-items: flex-start; /* Alinea el icono arriba */
+    gap: 12px;               /* Espacio entre icono y números */
+    margin: 8px 0;           /* Espacio igual a los otros párrafos */
+}
+
+.footer-phones i {
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+    margin-top: 4px;         /* Ajuste para que el icono se vea centrado con la primera línea */
+}
+
+.phone-numbers {
+    display: flex;
+    flex-direction: column;  /* Fuerza el 2 arriba y 2 abajo */
+    text-align: left;
+    color: #cccccc;
+    line-height: 1.6;        /* Espacio cómodo entre las dos líneas */
+}
+
+/* En móvil centramos todo el bloque */
+@media (max-width: 768px) {
+    .footer-phones {
+        justify-content: center;
+    }
+}
