@@ -1281,3 +1281,46 @@ footer {
     .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 }
+/* --- CORRECCIÓN QUIRÚRGICA DEL FOOTER --- */
+
+/* 1. Asegura que los números y la dirección tengan el mismo color gris */
+.footer-info p, 
+.footer-info span, 
+.phone-numbers span {
+    color: #cccccc !important; 
+    text-decoration: none;
+}
+
+/* 2. Alinea los teléfonos a la derecha del icono en Desktop */
+.footer-phones {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+    padding: 0;
+}
+/* Alineación del icono */
+.footer-phones i {
+    color: var(--accent-color);
+    width: 20px;             /* ANCHO FIJO: Esto es lo que alinea el texto con los otros iconos */
+    text-align: center;      /* Centra el icono dentro de esos 20px */
+    margin-right: 0;         /* El espacio lo controla el 'gap' anterior */
+    flex-shrink: 0;          /* Evita que el icono se haga pequeño */
+}
+
+/* 3. Mantiene los dos números en columna */
+.phone-numbers {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* 4. Evita que en móviles se vea raro */
+@media (max-width: 768px) {
+    .footer-phones {
+        justify-content: center;
+    }
+    .phone-numbers {
+        text-align: left; /* Mantiene la alineación interna de los números */
+    }
+}
