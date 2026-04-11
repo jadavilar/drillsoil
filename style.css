@@ -157,32 +157,26 @@ h2 {
 .menu-toggle {
 
     display: none;
+
     flex-direction: column;
-justify-content: center; /* Centra las barras verticalmente */
-    align-items: center;     /* Centra las barras horizontalmente */
-    width: 44px;             /* Área de toque más amplia */
-    height: 44px;            /* Área de toque más amplia */
+
     cursor: pointer;
-    z-index: 2000; /* Un valor más alto que el de .nav-links que es 1000 */
-    position: relative; /* Necesario para que el z-index funcione */
-overflow: visible;       /* Crucial para que no se corte la X */
-    padding: 10px;       /* Da espacio para que las puntas de la X no choquen */
-    overflow: visible;   /* Permite que la rotación se vea completa */
-    background: transparent;
+
 }
 
 
 
 .menu-toggle .bar {
 
-    width: 28px;
+    width: 25px;
+
     height: 3px;
+
     background-color: var(--text-light);
-    margin: 3px 0;
-    transition: all 0.3s ease-in-out;
-    border-radius: 4px;
-    display: block;
-    transform-origin: center; /* La rotación nace desde el centro de la barra */
+
+    margin: 4px 0;
+
+    transition: 0.3s;
 
 }
 
@@ -247,23 +241,22 @@ overflow: visible;       /* Crucial para que no se corte la X */
 
 
 .hero-content {
+
     position: relative;
+
     z-index: 1;
+
     color: var(--text-light);
-    width: 100%;           /* Asegura que use todo el ancho disponible */
-    max-width: 1200px;     /* Aumenta este límite si es necesario */
-    margin: 0 auto;
+
 }
 
 
 
 .hero-logo {
 
-    width: 500px;       /* Ajusta este número si lo quieres aún más grande */
-    max-width: 100%;    /* Seguridad para que no desborde */
-    height: auto;
-    margin-bottom: 15px;
-    display: block;
+    max-width: 500px;
+
+    margin-bottom: 0px;
 
 }
 
@@ -271,10 +264,12 @@ overflow: visible;       /* Crucial para que no se corte la X */
 
 .hero p {
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+
     font-style: italic;
-    color: var(--text-light);
-    margin-top: 10	px;
+
+    margin-top: 10px;
+
     padding: 0 20px;
 
 }
@@ -315,20 +310,6 @@ overflow: visible;       /* Crucial para que no se corte la X */
 
 }
 
-/* Usamos selectores más largos para ganar prioridad */
-.hero .hero-content .hero-logo {
-    width: 500px !important;    /* Ajusta este valor al tamaño que desees */
-    max-width: 90vw !important; /* Permite que crezca casi al ancho de la pantalla */
-    height: auto !important;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-.hero .hero-content p {
-    font-size: 1.rem !important; /* Agranda el lema proporcionalmente */
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 
 /* =========================================
@@ -832,13 +813,17 @@ section {
 
 
 .video-wrapper {
+
     position: relative;
-    max-width: 1000px;      /* Controla el tamaño total aquí */
-    margin: 0 auto;
-    padding-bottom: 45%;   /* Proporción calculada sobre el nuevo max-width */
+
+    padding-bottom: 56.25%; 
+
     height: 0;
+
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
     border-radius: 8px;
+
 }
 
 
@@ -995,388 +980,304 @@ section {
 
 }
 
+
+
 /* =========================================
-   FOOTER: RESTAURACIÓN TOTAL Y DEFINITIVA
+
+   FOOTER
+
    ========================================= */
+
 footer {
-    background-color: #2c2d23 !important; /* Color oscuro forzado */
-    color: #ffffff !important;
-    padding: 60px 0 20px;
-    width: 100%;
-    display: block;
-    position: relative;
+
+    background-color: var(--primary-dark); 
+
+    color: var(--text-light);
+
+    padding: 50px 0 20px;
+
 }
+
+
 
 .footer-content {
+
     display: flex;
-    flex-direction: column;
-    align-items: flex-start !important; /* Logo y fila siempre a la izquierda */
-    gap: 20px;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+
 }
+
+
 
 .footer-logo {
-    width: 250px;
+
+    max-width: 250px;
+
     height: auto;
-    margin: 0 0 10px 0 !important;
+
+    margin-bottom: 15px;
+
     display: block;
+
 }
 
-/* LA FILA QUE JUNTA INFO Y REDES */
-.footer-main-row {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start; /* Pega las redes a la info */
-    align-items: flex-start;    /* Alinea al techo para poder subir las RRSS */
-    gap: 400px;                  /* Espacio entre los datos y las redes */
-    flex-wrap: wrap;
-    position: relative;
+
+
+.footer-info p {
+
+    margin: 8px 0;
+
+    color: #cccccc;
+
+    display: flex; 
+
+    align-items: center;
+
 }
 
-/* --- BLOQUE DE CONTACTO (SANGRIAS PERFECTAS) --- */
-.footer-info {
-    text-align: left !important;
-    flex: 0 1 auto;
-}
 
-.footer-info p, .footer-phones {
-    margin: 10px 0;
-    color: #cccccc !important;
-    display: flex;
-    align-items: flex-start; /* Alinea icono arriba si el texto tiene 2 líneas */
-    text-align: left;
-    text-decoration: none;
-}
 
-.footer-info i, .footer-phones i {
-    color: #E67E22; /* Naranja */
-    width: 25px;       /* ANCHO FIJO: Garantiza sangría perfecta */
+.footer-info i {
+
+    color: var(--accent-color);
+
+    margin-right: 12px;
+
+    width: 20px; 
+
     text-align: center;
-    margin-right: 15px;
-    margin-top: 4px;   /* Baja un poco el icono para nivelar con la primera línea */
+
     flex-shrink: 0;
+
 }
 
-.phone-numbers {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
 
-/* --- REDES SOCIALES (SUBIDAS SIN ROMPER FORMATO) --- */
-.footer-social {
-    display: flex;
-    gap: 25px;
-    
-    /* MÉTODO DE POSICIONAMIENTO RELATIVO: El más seguro */
-    position: relative;
-    top: 40px; /* NÚMERO NEGATIVO = SUBE. Ajusta este valor (-30px, -40px) */
-    
-    flex-shrink: 0;
-    height: fit-content;
-    align-self: flex-start;
-}
 
 .footer-social a {
-    color: #ffffff !important;
-    font-size: 2.2rem;
-    line-height: 1;    /* Elimina espacio extra arriba/abajo del icono */
-    transition: 0.3s ease;
+
+    color: var(--text-light);
+
+    font-size: 2.5rem; 
+
+    margin: 0 15px;
+
+    transition: color 0.3s, transform 0.3s;
+
     display: inline-block;
+
 }
+
+
 
 .footer-social a:hover {
-    color: #E67E22 !important;
+
+    color: var(--accent-color);
+
     transform: translateY(-3px);
+
 }
+
+
 
 .footer-bottom {
+
     border-top: 1px solid #444537;
-    margin-top: 40px;
+
     padding-top: 20px;
-    text-align: center !important;
+
+    text-align: center; 
+
+    width: 100%; 
+
+    display: block;
+
+    font-size: 1rem;
+
     color: #aaaaaa;
-    width: 100%;
+
 }
 
-/* --- AJUSTE PARA MÓVIL --- */
-@media (max-width: 768px) {
-    .footer-content, .footer-main-row, .footer-info {
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center;
-    }
-    
-    .footer-logo { margin: 0 auto 15px auto !important; }
-    
-    .footer-social {
-        justify-content: center;
-        top: 0; /* Resetear posición en móvil */
-        margin-top: 20px;
-    }
-}
-/* WHATSAPP FLOTANTE - FORZADO */
-.whatsapp-float {
-    position: fixed !important; /* Asegura que se quede fijo */
-    width: 60px !important;
-    height: 60px !important;
-    
-    /* PRUEBA CON VALORES EXAGERADOS PARA VER EL MOVIMIENTO: */
-    bottom: 40px !important; /* Sube bastante */
-    right: 40px !important;  /* Se aleja mucho del borde derecho 
 
-*//* =========================================
-   DISEÑO RESPONSIVE (SMARTPHONES) - COMPLETO
+
+/* =========================================
+
+   BOTÓN FLOTANTE WHATSAPP
+
    ========================================= */
+
+.whatsapp-float {
+
+    position: fixed;
+
+    width: 60px;
+
+    height: 60px;
+
+    bottom: 40px;
+
+    right: 40px;
+
+    background-color: #25d366;
+
+    color: #FFF;
+
+    border-radius: 50px;
+
+    text-align: center;
+
+    font-size: 35px;
+
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: transform 0.3s;
+
+}
+
+
+
+.whatsapp-float:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+/* =========================================
+
+   DISEÑO RESPONSIVE (MÓVILES)
+
+   ========================================= */
+
 @media (max-width: 768px) {
-    
-    /* --- 1. NAVBAR Y HAMBURGUESA --- */
+
     .navbar {
-        padding: 15px 20px !important;
+
+        padding: 15px 20px;
+
     }
 
-    .menu-toggle {
-        display: flex !important;
-        z-index: 9999;
-    }
+    
 
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 0;
-        height: 100vh;
-        background-color: var(--primary-blue);
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.3s ease-in-out;
-        z-index: 5000;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-    }
-
-    /* Animación de la X */
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-    /* --- 2. SECCIÓN NOSOTROS (ORDEN SOLICITADO) --- */
     .about-grid {
-        display: flex !important;
-        flex-direction: column !important; /* Apila todo verticalmente */
-        gap: 30px;
+
+        grid-template-columns: 1fr;
+
     }
 
-    .about-text {
-        order: 1 !important; /* 1. TEXTO */
-        text-align: center;
-    }
+    
 
-    .about-stats {
-        order: 2 !important; /* 2. ESTADISTICAS */
-        flex-direction: column;
-        gap: 15px;
-    }
+    /* En móvil, el botón y el fundador se alinean al centro */
 
     .founder-profile {
-        order: 3 !important; /* 3. FUNDADOR */
-        height: auto !important;
-        margin: 10px auto !important;
-        width: 100%;
-        max-width: 320px;
-    }
 
-    .brochure-container {
-        order: 4 !important; /* 4. BOTON DESCARGAR */
-        height: auto !important;
-        width: 100%;
-        display: flex;
         justify-content: center;
+
+        text-align: left;
+
     }
 
-    .btn-brochure {
-        width: 100%;
-        max-width: 300px;
-    }
 
-    /* --- 3. FOOTER (CENTRADO Y ALINEADO) --- */
-    .footer-main-row {
-        flex-direction: column !important;
-        align-items: center !important;
+
+    .footer-content {
+
+        flex-direction: column;
+
+        text-align: center;
+
         gap: 30px;
+
     }
 
-    .footer-info {
-        width: 100%;
-        max-width: 290px;
-        margin: 0 auto !important;
-        text-align: left !important;
-    }
-
-    .footer-info p, .footer-phones {
-        justify-content: flex-start !important;
-    }
-
-    .footer-social {
-        justify-content: center !important;
-        width: 100% !important;
-        top: 0 !important; 
-        margin-top: 10px;
-    }
+    
 
     .footer-logo {
-        margin: 0 auto 15px auto !important;
+
+        margin: 0 auto 15px auto;
+
     }
 
-    /* --- 4. WHATSAPP MÓVIL --- */
+    
+
     .whatsapp-float {
-        display: flex !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 55px !important;
-        height: 55px !important;
-        z-index: 9999 !important;
-    }
-}
-    
-    background-color: #25d366 !important;
-    color: #FFF !important;
-    border-radius: 50px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 35px !important;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3) !important;
-    z-index: 9999 !important; /* Lo ponemos por encima de TODO */
-    text-decoration: none !important;
-}
-/* =========================================
-   DISEÑO RESPONSIVE GLOBAL - VERSIÓN FINAL
-   ========================================= */
-@media (max-width: 768px) {
-    
-    /* --- 1. NAVBAR Y MENÚ HAMBURGUESA --- */
-    .navbar {
-        padding: 10px 20px !important;
+
+        bottom: 20px;
+
+        right: 20px;
+
     }
 
-    .menu-toggle {
-        display: flex !important;
-        z-index: 9999 !important;
-    }
+
 
     .nav-links {
-        position: fixed !important;
-        right: -100% !important;
-        top: 60px !important; /* Baja el menú para que no tape el logo/navbar */
-        height: auto !important; /* Solo el alto necesario para los links */
-        width: 200px !important; /* Ancho reducido, no toda la pantalla */
-        background-color: var(--primary-blue) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important; 
-        align-items: center !important;
-        transition: 0.4s ease-in-out !important;
-        z-index: 5000 !important;
-        padding: 20px 0 !important; /* Espacio interno arriba y abajo de los links */
-        border-radius: 0 0 0 10px; /* Opcional: redondea la esquina inferior izquierda */
-        box-shadow: -5px 5px 15px rgba(0,0,0,0.3) !important;
+
+        position: fixed;
+
+        right: -100%;
+
+        top: 70px;
+
+        flex-direction: column;
+
+        background-color: var(--primary-blue);
+
+        width: 100%;
+
+        text-align: center;
+
+        transition: 0.3s ease-in-out;
+
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+
     }
+
+
 
     .nav-links.active {
-        right: 0 !important;
+
+        right: 0;
+
     }
+
+
 
     .nav-links li {
-        margin: 15px 0 !important;
+
+        margin: 25px 0;
+
     }
 
-    /* Animación de la X */
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0 !important; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg) !important; }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg) !important; }
 
-    /* --- 2. SECCIÓN SOBRE NOSOTROS (ORDEN ESTRICTO) --- */
-    .about-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
+
+    .menu-toggle {
+
+        display: flex;
+
     }
 
-    .about-text { order: 1 !important; text-align: center !important; }
-.about-stats { 
-        order: 2 !important; 
-        display: flex !important; 
-        flex-direction: column !important; 
-        gap: 15px !important; 
-        align-items: center !important; /* Centra las tarjetas en la pantalla */
-    }
 
-.stat-box {
-        width: 100% !important;        /* Ocupan el mismo ancho */
-        max-width: 280px !important;   /* Limita el ancho para que no sean gigantes */
-        height: auto !important;
-        flex: none !important;         /* Evita que una crezca más que la otra */
-    }
-    .founder-profile { 
-        order: 3 !important; 
-        margin: 20px auto !important; 
-        height: auto !important; 
-        width: 100% !important;
-        max-width: 320px !important;
-    }
-    .brochure-container { 
-        order: 4 !important; 
-        display: flex !important; 
-        justify-content: center !important;
-        height: auto !important;
-    }
 
-    /* --- 3. FOOTER (CENTRADO PERO ALINEADO IZQ) --- */
-    .footer-main-row {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 30px !important;
-    }
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
 
-    .footer-info {
-        width: 100% !important;
-        max-width: 280px !important; 
-        margin: 0 auto !important;
-        text-align: left !important;
-    }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 
-    .footer-info p, .footer-phones {
-        justify-content: flex-start !important; 
-        display: flex !important;
-    }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .footer-social {
-        justify-content: center !important; 
-        width: 100% !important;
-        top: 0 !important; 
-        margin-top: 10px !important;
-    }
-
-    .footer-logo {
-        margin: 0 auto 15px auto !important;
-    }
-
-    /* --- 4. WHATSAPP MÓVIL (VISIBLE SIEMPRE) --- */
-    .whatsapp-float {
-        display: flex !important;
-        visibility: visible !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 55px !important;
-        height: 55px !important;
-        z-index: 9999 !important;
-    }
 }
