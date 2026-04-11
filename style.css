@@ -1266,7 +1266,7 @@ footer {
 
     .nav-links li {
 
-        margin: 25px 0;
+        margin: 10px 0;
 
     }
 
@@ -1335,7 +1335,7 @@ footer {
     }
 
     /* 1. Ajuste del contenedor de información */
-display: flex;
+        display: flex;
         flex-direction: column;
         align-items: flex-start; /* Asegura que el bloque empiece a la izquierda */
         max-width: fit-content;
