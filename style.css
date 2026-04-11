@@ -1281,7 +1281,11 @@ footer {
     }
 
     .nav-links.active { right: 0 !important; }
-    .nav-links li { margin: 12px 0 !important; }
+    .nav-links li { margin: 12px 0 !important; 
+     list-style: none !important;
+        padding: 0 !important;  /* Elimina cualquier espacio extra interno */
+        width: 100% !important; /* Opcional: para que el área de clic sea toda la fila */
+        text-align: center !important;}
 
     /* Animación de la X */
     .menu-toggle.is-active .bar:nth-child(2) { opacity: 0 !important; }
