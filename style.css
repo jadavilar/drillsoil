@@ -832,17 +832,13 @@ section {
 
 
 .video-wrapper {
-
     position: relative;
-
-    padding-bottom: 56.25%; 
-
+    max-width: 1000px;      /* Controla el tamaño total aquí */
+    margin: 0 auto;
+    padding-bottom: 45%;   /* Proporción calculada sobre el nuevo max-width */
     height: 0;
-
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-
     border-radius: 8px;
-
 }
 
 
@@ -1126,7 +1122,9 @@ footer {
     
     /* PRUEBA CON VALORES EXAGERADOS PARA VER EL MOVIMIENTO: */
     bottom: 40px !important; /* Sube bastante */
-    right: 40px !important;  /* Se aleja mucho del borde derecho *//* =========================================
+    right: 40px !important;  /* Se aleja mucho del borde derecho 
+
+*//* =========================================
    DISEÑO RESPONSIVE (SMARTPHONES) - COMPLETO
    ========================================= */
 @media (max-width: 768px) {
