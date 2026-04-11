@@ -1126,7 +1126,127 @@ footer {
     
     /* PRUEBA CON VALORES EXAGERADOS PARA VER EL MOVIMIENTO: */
     bottom: 40px !important; /* Sube bastante */
-    right: 40px !important;  /* Se aleja mucho del borde derecho */
+    right: 40px !important;  /* Se aleja mucho del borde derecho *//* =========================================
+   DISEÑO RESPONSIVE (SMARTPHONES) - COMPLETO
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* --- 1. NAVBAR Y HAMBURGUESA --- */
+    .navbar {
+        padding: 15px 20px !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        z-index: 9999;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        background-color: var(--primary-blue);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+        z-index: 5000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* Animación de la X */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* --- 2. SECCIÓN NOSOTROS (ORDEN SOLICITADO) --- */
+    .about-grid {
+        display: flex !important;
+        flex-direction: column !important; /* Apila todo verticalmente */
+        gap: 30px;
+    }
+
+    .about-text {
+        order: 1 !important; /* 1. TEXTO */
+        text-align: center;
+    }
+
+    .about-stats {
+        order: 2 !important; /* 2. ESTADISTICAS */
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .founder-profile {
+        order: 3 !important; /* 3. FUNDADOR */
+        height: auto !important;
+        margin: 10px auto !important;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .brochure-container {
+        order: 4 !important; /* 4. BOTON DESCARGAR */
+        height: auto !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-brochure {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* --- 3. FOOTER (CENTRADO Y ALINEADO) --- */
+    .footer-main-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px;
+    }
+
+    .footer-info {
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto !important;
+        text-align: left !important;
+    }
+
+    .footer-info p, .footer-phones {
+        justify-content: flex-start !important;
+    }
+
+    .footer-social {
+        justify-content: center !important;
+        width: 100% !important;
+        top: 0 !important; 
+        margin-top: 10px;
+    }
+
+    .footer-logo {
+        margin: 0 auto 15px auto !important;
+    }
+
+    /* --- 4. WHATSAPP MÓVIL --- */
+    .whatsapp-float {
+        display: flex !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 55px !important;
+        height: 55px !important;
+        z-index: 9999 !important;
+    }
+}
     
     background-color: #25d366 !important;
     color: #FFF !important;
@@ -1140,27 +1260,117 @@ footer {
     text-decoration: none !important;
 }
 /* =========================================
-   DISEÑO RESPONSIVE (MÓVILES)
+   DISEÑO RESPONSIVE GLOBAL - VERSIÓN FINAL
    ========================================= */
 @media (max-width: 768px) {
-    .footer-content, .footer-main-row, .footer-info {
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center;
+    
+    /* --- 1. NAVBAR Y MENÚ HAMBURGUESA --- */
+    .navbar {
+        padding: 10px 20px !important;
     }
-    .footer-logo { margin: 0 auto !important; }
-}
+
+    .menu-toggle {
+        display: flex !important;
+        z-index: 9999 !important;
+    }
+
+    .nav-links {
+        position: fixed !important;
+        right: -100% !important;
+        top: 60px !important; /* Baja el menú para que no tape el logo/navbar */
+        height: auto !important; /* Solo el alto necesario para los links */
+        width: 200px !important; /* Ancho reducido, no toda la pantalla */
+        background-color: var(--primary-blue) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; 
+        align-items: center !important;
+        transition: 0.4s ease-in-out !important;
+        z-index: 5000 !important;
+        padding: 20px 0 !important; /* Espacio interno arriba y abajo de los links */
+        border-radius: 0 0 0 10px; /* Opcional: redondea la esquina inferior izquierda */
+        box-shadow: -5px 5px 15px rgba(0,0,0,0.3) !important;
+    }
+
+    .nav-links.active {
+        right: 0 !important;
+    }
+
+    .nav-links li {
+        margin: 15px 0 !important;
+    }
+
+    /* Animación de la X */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0 !important; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg) !important; }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg) !important; }
+
+    /* --- 2. SECCIÓN SOBRE NOSOTROS (ORDEN ESTRICTO) --- */
+    .about-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .about-text { order: 1 !important; text-align: center !important; }
+    .about-stats { 
+        order: 2 !important; 
+        display: flex !important; 
+        flex-direction: column !important; 
+        gap: 15px !important; 
+    }
+    .founder-profile { 
+        order: 3 !important; 
+        margin: 20px auto !important; 
+        height: auto !important; 
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+    .brochure-container { 
+        order: 4 !important; 
+        display: flex !important; 
+        justify-content: center !important;
+        height: auto !important;
+    }
+
+    /* --- 3. FOOTER (CENTRADO PERO ALINEADO IZQ) --- */
+    .footer-main-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+    }
+
+    .footer-info {
+        width: 100% !important;
+        max-width: 280px !important; 
+        margin: 0 auto !important;
+        text-align: left !important;
+    }
+
+    .footer-info p, .footer-phones {
+        justify-content: flex-start !important; 
+        display: flex !important;
+    }
 
     .footer-social {
-        justify-content: center;
-        margin-top: 20px;
+        justify-content: center !important; 
+        width: 100% !important;
+        top: 0 !important; 
+        margin-top: 10px !important;
     }
 
+    .footer-logo {
+        margin: 0 auto 15px auto !important;
+    }
+
+    /* --- 4. WHATSAPP MÓVIL (VISIBLE SIEMPRE) --- */
     .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
+        display: flex !important;
+        visibility: visible !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 55px !important;
+        height: 55px !important;
+        z-index: 9999 !important;
     }
 }
