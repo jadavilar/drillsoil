@@ -161,6 +161,8 @@ h2 {
     flex-direction: column;
 
     cursor: pointer;
+    z-index: 1100; /* Un valor más alto que el de .nav-links que es 1000 */
+    position: relative; /* Necesario para que el z-index funcione */
 
 }
 
@@ -1279,6 +1281,9 @@ footer {
     .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 
     .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* Añade esto para dar espacio a la rotación */
+    .menu-toggle {padding: 5px; /* Evita que los bordes corten las puntas de la X */
+    }
 
 }
 /* --- CORRECCIÓN QUIRÚRGICA DEL FOOTER --- */
