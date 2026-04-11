@@ -1317,10 +1317,29 @@ footer {
 
 /* 4. Evita que en móviles se vea raro */
 @media (max-width: 768px) {
-    .footer-phones {
-        justify-content: center;
+    /* ... otros estilos de móvil ... */
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center; /* Mantiene el centrado general de los bloques */
+        gap: 30px;
     }
-    .phone-numbers {
-        text-align: left; /* Mantiene la alineación interna de los números */
+
+    /* FIX: Contenedor de teléfonos en móvil */
+    .footer-phones {
+        display: flex;
+        justify-content: flex-start; /* Alinea el grupo al inicio del contenedor */
+        align-items: center;         /* Centra el icono verticalmente con las 2 líneas */
+        width: fit-content;          /* Hace que el bloque no ocupe todo el ancho */
+        margin: 10px auto;           /* Centra el bloque entero respecto a la página */
+        text-align: left;            /* Alinea el texto a la izquierda internamente */
+        gap: 12px;
+    }
+
+    .footer-info p {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 12px;
     }
 }
