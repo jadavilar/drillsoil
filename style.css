@@ -1313,11 +1313,19 @@ footer {
     }
 
     .about-text { order: 1 !important; text-align: center !important; }
-    .about-stats { 
+.about-stats { 
         order: 2 !important; 
         display: flex !important; 
         flex-direction: column !important; 
         gap: 15px !important; 
+        align-items: center !important; /* Centra las tarjetas en la pantalla */
+    }
+
+.stat-box {
+        width: 100% !important;        /* Ocupan el mismo ancho */
+        max-width: 280px !important;   /* Limita el ancho para que no sean gigantes */
+        height: auto !important;
+        flex: none !important;         /* Evita que una crezca más que la otra */
     }
     .founder-profile { 
         order: 3 !important; 
