@@ -247,22 +247,23 @@ overflow: visible;       /* Crucial para que no se corte la X */
 
 
 .hero-content {
-
     position: relative;
-
     z-index: 1;
-
     color: var(--text-light);
-
+    width: 100%;           /* Asegura que use todo el ancho disponible */
+    max-width: 1200px;     /* Aumenta este límite si es necesario */
+    margin: 0 auto;
 }
 
 
 
 .hero-logo {
 
-    max-width: 500px;
-
-    margin-bottom: 0px;
+    width: 500px;       /* Ajusta este número si lo quieres aún más grande */
+    max-width: 100%;    /* Seguridad para que no desborde */
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
 
 }
 
@@ -270,12 +271,10 @@ overflow: visible;       /* Crucial para que no se corte la X */
 
 .hero p {
 
-    font-size: 1.2rem;
-
+    font-size: 1.5rem;
     font-style: italic;
-
-    margin-top: 10px;
-
+    color: var(--text-light);
+    margin-top: 10	px;
     padding: 0 20px;
 
 }
@@ -316,6 +315,20 @@ overflow: visible;       /* Crucial para que no se corte la X */
 
 }
 
+/* Usamos selectores más largos para ganar prioridad */
+.hero .hero-content .hero-logo {
+    width: 500px !important;    /* Ajusta este valor al tamaño que desees */
+    max-width: 90vw !important; /* Permite que crezca casi al ancho de la pantalla */
+    height: auto !important;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.hero .hero-content p {
+    font-size: 1.2rem !important; /* Agranda el lema proporcionalmente */
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 
 /* =========================================
@@ -1266,7 +1279,7 @@ footer {
 
     .nav-links li {
 
-        margin: px 0;
+        margin: 10px 0;
 
     }
 
